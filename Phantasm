@@ -41,7 +41,7 @@ ButtonTab:Button({
         imageLabel.ScaleType = Enum.ScaleType.Crop
         imageLabel.Parent = gui
         local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://4899159505" -- ใส่ ID ของเสียงที่ต้องการ
+        sound.SoundId = "rbxassetid://4899159505"
         sound.Volume = 10
         sound.Looped = false
         sound.Parent = game.Workspace
@@ -584,7 +584,7 @@ imageLabel.BackgroundTransparency = 1
 imageLabel.ScaleType = Enum.ScaleType.Crop
 imageLabel.Parent = gui
 local sound = Instance.new("Sound")
-sound.SoundId = "rbxassetid://4899159505" -- ใส่ ID ของเสียงที่ต้องการ
+sound.SoundId = "rbxassetid://4899159505"
 sound.Volume = 10
 sound.Looped = false
 sound.Parent = game.Workspace
