@@ -563,6 +563,12 @@ imageLabel.Image = "rbxassetid://10743355496"
 imageLabel.BackgroundTransparency = 1
 imageLabel.ScaleType = Enum.ScaleType.Crop
 imageLabel.Parent = gui
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://4899159505" -- ใส่ ID ของเสียงที่ต้องการ
+sound.Volume = 10
+sound.Looped = false
+sound.Parent = game.Workspace
+sound:Play()
 local messages = {
     "fuck you idiot nigger furry",
     "can i rape you? i want to rape you so bad",
